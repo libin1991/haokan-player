@@ -1,0 +1,27 @@
+.xgplayer-time{
+  order: 2;
+    display: inline-block;
+    opacity: 0.9;
+    text-shadow: 0 0 4px rgba(0, 0, 0, .6);
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    &-wapper {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+  span::after{
+    content: "/";
+    display: inline-block;
+    padding: 0 3px;
+  }
+  em{
+    color: $timeDurationColor;
+  }
+}

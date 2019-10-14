@@ -1,0 +1,21 @@
+.xgplayer-tips{
+    display: none;
+    white-space: nowrap;
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .8);
+    opacity: 0.85;
+    font-family: PingFangSC;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+}

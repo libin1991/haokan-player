@@ -1,0 +1,23 @@
+.xgplayer-play, .xgplayer-play-img{
+  position: relative;
+  order: 0;
+  display: block;
+  cursor: pointer;
+  .xgplayer-icon{
+    margin-top: 0;
+      height: 40px;
+      width: 40px;
+      svg {
+          position: relative;
+          left: 50%;
+          top: 50%;
+          transform: translate(-30%, -42%);
+      }
+  }
+  &:hover{
+    opacity: 0.85;
+    .xgplayer-tips{
+      display: block;
+    }
+  }
+}
