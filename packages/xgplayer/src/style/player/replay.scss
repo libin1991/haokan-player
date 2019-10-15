@@ -44,7 +44,7 @@
     cursor: pointer;
   }
 
-  @at-root .xgplayer.xgplayer-ended{
+  @at-root .hkplayer.xgplayer-ended{
     .xgplayer-controls {
       display: none;
     }
@@ -65,7 +65,7 @@
     opacity: 0.85;
   }
 
-  @at-root .xgplayer.xgplayer-ended{
+  @at-root .hkplayer.xgplayer-ended{
     .xgplayer-replay-img{
       display: block;
     }

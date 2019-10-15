@@ -22,13 +22,13 @@
 .xgplayer-slider {
     display: none;
     position: absolute;
-    width: 28px;
-    height: 88px;
+    width: 40px;
+    height: 108px;
     background: $sliderBgColor;
-    border-radius: 1px;
     bottom: 42px;
     outline: none;
-    left: 6px;
+    left: 0;
+    border-radius: 4px;
     @at-root .hkplayer.xgplayer-volume-active & {
         display: block;
     }
@@ -47,13 +47,13 @@
 .xgplayer-bar, .xgplayer-drag {
     display: block;
     position: absolute;
-    bottom: 6px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     background: $sliderBarBgColor;
     border-radius: 100px;
     width: 4px;
-    height: 76px;
+    height: 78px;
     outline: none;
     cursor: pointer;
 }
@@ -61,7 +61,7 @@
 .xgplayer-drag {
     bottom: 0;
     background: $sliderDragBgColor;
-    max-height: 76px;
+    max-height: 78px;
     &:after {
         content: " ";
         display: inline-block;

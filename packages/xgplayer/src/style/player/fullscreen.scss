@@ -1,17 +1,22 @@
-.xgplayer-fullscreen{
+.hkplayer-fullscreen{
   order: 12;
   position: relative;
   display: inline-block;
   cursor: pointer;
   .xgplayer-icon{
-    margin: 4px -4px 0 0;
+    svg {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
   }
   &:hover {
     .xgplayer-tips {
       display: block;
     }
   }
-  @at-root .xgplayer.xgplayer-fullscreen-active{
+  @at-root .hkplayer.hkplayer-fullscreen-active{
     position: fixed !important;
     left: 0 !important;
     top: 0 !important;

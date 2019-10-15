@@ -121,6 +121,7 @@ let volume = function () {
     to: iconPath['large']
   })
   let barSize = null
+  let clickvolume = player.config.volume;
   slider.volume = player.config.volume;
 
   ['touchstart', 'mousedown'].forEach(item => {
@@ -167,6 +168,9 @@ let volume = function () {
           player.volume = Math.max(Math.min(now, 1), 0.01)
         }
         slider.volume = player.volume
+        if (player.volume) {
+            clickvolume = player.volume
+        }
         isMove = false
       }
       window.addEventListener('mousemove', move)
@@ -182,11 +186,10 @@ let volume = function () {
       e.preventDefault()
       e.stopPropagation()
       player.video.muted = false
-        console.log(slider.prevvolum)
       if (player.volume === 0) {
-        player.volume = slider.volume
+        player.volume = clickvolume
+        slider.volume = clickvolume
       } else {
-        const curvolum = slider.volume
         player.volume = 0
       }
     })
