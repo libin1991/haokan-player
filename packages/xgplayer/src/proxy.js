@@ -330,7 +330,7 @@ class Proxy {
   }
   set src (url) {
     let self = this
-    if (!util.hasClass(this.root, 'xgplayer-ended')) {
+    if (!util.hasClass(this.root, 'hkplayer-ended')) {
       this.emit('urlchange', JSON.parse(JSON.stringify(self.logParams)))
     }
     this.logParams = {
@@ -363,16 +363,16 @@ class Proxy {
     this.video.volume = vol
   }
   get fullscreen () {
-    return util.hasClass(this.root, 'xgplayer-is-fullscreen') || util.hasClass(this.root, 'xgplayer-fullscreen-active')
+    return util.hasClass(this.root, 'hkplayer-is-fullscreen') || util.hasClass(this.root, 'hkplayer-fullscreen-active')
   }
   get bullet () {
-    return util.findDom(this.root, 'xg-bullet') ? util.hasClass(util.findDom(this.root, 'xg-bullet'), 'xgplayer-has-bullet') : false
+    return util.findDom(this.root, 'hk-bullet') ? util.hasClass(util.findDom(this.root, 'hk-bullet'), 'hkplayer-has-bullet') : false
   }
   get textTrack () {
-    return util.hasClass(this.root, 'xgplayer-is-textTrack')
+    return util.hasClass(this.root, 'hkplayer-is-textTrack')
   }
   get pip () {
-    return util.hasClass(this.root, 'xgplayer-pip-active')
+    return util.hasClass(this.root, 'hkplayer-pip-active')
   }
 }
 

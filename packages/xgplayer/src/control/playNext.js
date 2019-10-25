@@ -11,10 +11,10 @@ const playNext = function () {
     if (nextBtn.type === 'img') {
       next = Player.util.createImgBtn('playNext', nextBtn.url, nextBtn.width, nextBtn.height)
     } else {
-      next = util.createDom('xg-playNext', `<xg-icon class="xgplayer-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+      next = util.createDom('hk-playNext', `<hk-icon class="hkplayer-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
                 <path transform="scale(0.025 0.025)"
                 d="M800 380v768h-128v-352l-320 320v-704l320 320v-352z"></path>
-            </svg></xg-icon>`, {}, 'xgplayer-playNext')
+            </svg></hk-icon>`, {}, 'hkplayer-playNext')
     }
     controlEl.appendChild(next)
     const ev = ['click', 'touchend']

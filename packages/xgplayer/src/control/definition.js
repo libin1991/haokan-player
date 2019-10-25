@@ -2,7 +2,7 @@ import Player from '../player'
 
 let definition = function () {
   let player = this, util = Player.util, sniffer = Player.sniffer
-  let ul = util.createDom('xg-definition', '', {tabindex: 3}, 'xgplayer-definition'), root = player.controls
+  let ul = util.createDom('hk-definition', '', {tabindex: 3}, 'hkplayer-definition'), root = player.controls
   if (sniffer.device === 'mobile') {
     player.config.definitionActive = 'click'
   }
@@ -52,7 +52,7 @@ let definition = function () {
       }
     })
     tmp.push(`</ul><p class='name'>${(cursrc[0] || {name: ''}).name}</p>`)
-    let urlInRoot = root.querySelector('.xgplayer-definition')
+    let urlInRoot = root.querySelector('.hkplayer-definition')
     if (urlInRoot) {
       urlInRoot.innerHTML = tmp.join('')
       let cur = urlInRoot.querySelector('.name')
@@ -60,7 +60,7 @@ let definition = function () {
         cur.addEventListener('mouseenter', (e) => {
           e.preventDefault()
           e.stopPropagation()
-          util.addClass(player.root, 'xgplayer-definition-active')
+          util.addClass(player.root, 'hkplayer-definition-active')
           urlInRoot.focus()
         })
       }
@@ -71,7 +71,7 @@ let definition = function () {
         cur.addEventListener('mouseenter', (e) => {
           e.preventDefault()
           e.stopPropagation()
-          util.addClass(player.root, 'xgplayer-definition-active')
+          util.addClass(player.root, 'hkplayer-definition-active')
           ul.focus()
         })
       }
@@ -81,7 +81,7 @@ let definition = function () {
   function resourceReadyFunc (listArr) {
     list = listArr
     if (list && list instanceof Array && list.length > 1) {
-      util.addClass(player.root, 'xgplayer-is-definition')
+      util.addClass(player.root, 'hkplayer-is-definition')
       player.on('canplay', canplayDefiFunc)
     }
   }
@@ -151,10 +151,10 @@ let definition = function () {
         }
         player.emit('definitionChange', a.href)
         if (sniffer.device === 'mobile') {
-          util.removeClass(player.root, 'xgplayer-definition-active')
+          util.removeClass(player.root, 'hkplayer-definition-active')
         }
       } else if (player.config.definitionActive === 'click' && li && (li.tagName.toLocaleLowerCase() === 'p' || li.tagName.toLocaleLowerCase() === 'em')) {
-        util.addClass(player.root, 'xgplayer-definition-active')
+        util.addClass(player.root, 'hkplayer-definition-active')
         ul.focus()
       }
       player.emit('focus')
@@ -164,7 +164,7 @@ let definition = function () {
   ul.addEventListener('mouseleave', (e) => {
     e.preventDefault()
     e.stopPropagation()
-    util.removeClass(player.root, 'xgplayer-definition-active')
+    util.removeClass(player.root, 'hkplayer-definition-active')
   })
 
   function destroyFunc () {

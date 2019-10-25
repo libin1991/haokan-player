@@ -3,44 +3,44 @@ import Player from '../player'
 let progress = function () {
   let player = this
   let util = Player.util
-  let container = util.createDom('xg-progress', '<xg-outer class="xgplayer-progress-outer"><xg-cache class="xgplayer-progress-cache"></xg-cache><xg-played class="xgplayer-progress-played"></xgplayer-played><xg-progress-btn class="xgplayer-progress-btn"></xg-progress-btn><xg-point class="xgplayer-progress-point xgplayer-tips"></xg-point><xg-thumbnail class="xgplayer-progress-thumbnail xgplayer-tips"></xg-thumbnail></xg-outer>', {tabindex: 1}, 'xgplayer-progress')
+  let container = util.createDom('hk-progress', '<hk-outer class="hkplayer-progress-outer"><hk-cache class="hkplayer-progress-cache"></hk-cache><hk-played class="hkplayer-progress-played"></hkplayer-played><hk-progress-btn class="hkplayer-progress-btn"></hk-progress-btn><hk-point class="hkplayer-progress-point hkplayer-tips"></hk-point><hk-thumbnail class="hkplayer-progress-thumbnail hkplayer-tips"></hk-thumbnail></hk-outer>', {tabindex: 1}, 'hkplayer-progress')
   let root = player.controls
   let containerWidth
   root.appendChild(container)
-  let progress = container.querySelector('.xgplayer-progress-played')
-  let btn = container.querySelector('.xgplayer-progress-btn')
+  let progress = container.querySelector('.hkplayer-progress-played')
+  let btn = container.querySelector('.hkplayer-progress-btn')
   let btnWidth = 14 // btn.getBoundingClientRect().width
-  let outer = container.querySelector('.xgplayer-progress-outer')
-  let cache = container.querySelector('.xgplayer-progress-cache')
-  let point = container.querySelector('.xgplayer-progress-point')
-  let thumbnail = container.querySelector('.xgplayer-progress-thumbnail')
+  let outer = container.querySelector('.hkplayer-progress-outer')
+  let cache = container.querySelector('.hkplayer-progress-cache')
+  let point = container.querySelector('.hkplayer-progress-point')
+  let thumbnail = container.querySelector('.hkplayer-progress-thumbnail')
   player.dotArr = {}
   function dotEvent (dotItem, text) {
     dotItem.addEventListener('mouseenter', function (e) {
       if (text) {
-        util.addClass(dotItem, 'xgplayer-progress-dot-show')
-        util.addClass(container, 'xgplayer-progress-dot-active')
+        util.addClass(dotItem, 'hkplayer-progress-dot-show')
+        util.addClass(container, 'hkplayer-progress-dot-active')
       }
     })
     dotItem.addEventListener('mouseleave', function (e) {
       if (text) {
-        util.removeClass(dotItem, 'xgplayer-progress-dot-show')
-        util.removeClass(container, 'xgplayer-progress-dot-active')
+        util.removeClass(dotItem, 'hkplayer-progress-dot-show')
+        util.removeClass(container, 'hkplayer-progress-dot-active')
       }
     })
     dotItem.addEventListener('touchend', function (e) {
       e.preventDefault()
       e.stopPropagation()
       if (text) {
-        if(!util.hasClass(dotItem, 'xgplayer-progress-dot-show')) {
+        if(!util.hasClass(dotItem, 'hkplayer-progress-dot-show')) {
           Object.keys(player.dotArr).forEach(function (key) {
             if (player.dotArr[key]) {
-              util.removeClass(player.dotArr[key], 'xgplayer-progress-dot-show')
+              util.removeClass(player.dotArr[key], 'hkplayer-progress-dot-show')
             }
           })
         }
-        util.toggleClass(dotItem, 'xgplayer-progress-dot-show')
-        util.toggleClass(container, 'xgplayer-progress-dot-active')
+        util.toggleClass(dotItem, 'hkplayer-progress-dot-show')
+        util.toggleClass(container, 'hkplayer-progress-dot-active')
       }
     })
   }
@@ -48,7 +48,7 @@ let progress = function () {
     if (player.config.progressDot && util.typeOf(player.config.progressDot) === 'Array') {
       player.config.progressDot.forEach(item => {
         if (item.time >= 0 && item.time <= player.duration) {
-          let dot = util.createDom('xg-progress-dot', item.text ? `<span class="xgplayer-progress-tip">${item.text}</span>` : '', {}, 'xgplayer-progress-dot')
+          let dot = util.createDom('hk-progress-dot', item.text ? `<span class="hkplayer-progress-tip">${item.text}</span>` : '', {}, 'hkplayer-progress-dot')
           dot.style.left = (item.time / player.duration) * 100 + '%'
           outer.appendChild(dot)
           player.dotArr[item.time] = dot
@@ -63,7 +63,7 @@ let progress = function () {
       return
     }
     if (time >= 0 && time <= player.duration) {
-      let dot = util.createDom('xg-progress-dot', '', {}, 'xgplayer-progress-dot')
+      let dot = util.createDom('hk-progress-dot', '', {}, 'hkplayer-progress-dot')
       dot.style.left = (time / player.duration) * 100 + '%'
       outer.appendChild(dot)
       player.dotArr[time] = dot
@@ -139,7 +139,7 @@ let progress = function () {
         if (player.videoConfig.mediaType === 'video' && !player.dash && !player.config.closeMoveSeek) {
           player.currentTime = Number(now).toFixed(1)
         } else {
-          let time = util.findDom(root, '.xgplayer-time')
+          let time = util.findDom(root, '.hkplayer-time')
           if (time) {
             time.innerHTML = `<span>${util.format(now || 0)}</span><em>${util.format(player.duration)}`
           }
@@ -214,7 +214,7 @@ let progress = function () {
         left = left > containerWidth - pointWidth ? containerWidth - pointWidth : left
         point.style.left = `${left}px`
       }
-      if (util.hasClass(container, 'xgplayer-progress-dot-active')) {
+      if (util.hasClass(container, 'hkplayer-progress-dot-active')) {
         point.style.display = 'none'
       } else {
         point.style.display = 'block'

@@ -4,7 +4,7 @@ import DanmuJs from 'danmu.js'
 let danmu = function () {
   let player = this
   if (player.config.danmu) {
-    let container = Player.util.createDom('xg-bullet', '', {}, 'xgplayer-bullet')
+    let container = Player.util.createDom('hk-bullet', '', {}, 'hkplayer-bullet')
     player.root.appendChild(container)
     container.style.height = '100%'
     let config = Player.util.deepCopy({
@@ -22,7 +22,7 @@ let danmu = function () {
 
     player.once('complete', () => {
       let danmujs = new DanmuJs(config)
-      Player.util.addClass(container, 'xgplayer-has-bullet')
+      Player.util.addClass(container, 'hkplayer-has-bullet')
       if (!player.config.danmu.closeDefaultBtn) {
         player.bulletBtn = Player.util.copyDom(danmujs.bulletBtn.createSwitch(true))
         player.controls.appendChild(player.bulletBtn);
@@ -33,12 +33,12 @@ let danmu = function () {
             e.stopPropagation()
             Player.util.toggleClass(player.bulletBtn, 'danmu-switch-active')
             if (Player.util.hasClass(player.bulletBtn, 'danmu-switch-active')) {
-              Player.util.addClass(container, 'xgplayer-has-bullet')
+              Player.util.addClass(container, 'hkplayer-has-bullet')
               player.once('timeupdate', () => {
                 danmujs.start()
               })
             } else {
-              Player.util.removeClass(container, 'xgplayer-has-bullet')
+              Player.util.removeClass(container, 'hkplayer-has-bullet')
               danmujs.stop()
             }
           }, false)

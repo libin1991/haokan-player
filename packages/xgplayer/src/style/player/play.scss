@@ -1,9 +1,9 @@
-.xgplayer-play, .xgplayer-play-img{
+.hkplayer-play, .hkplayer-play-img{
   position: relative;
   order: 0;
   display: block;
   cursor: pointer;
-  .xgplayer-icon{
+  .hkplayer-icon{
     margin-top: 0;
       height: 40px;
       width: 40px;
@@ -16,7 +16,7 @@
   }
   &:hover{
     opacity: 0.85;
-    .xgplayer-tips{
+    .hkplayer-tips{
       display: block;
     }
   }

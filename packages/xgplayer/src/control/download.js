@@ -7,13 +7,13 @@ const download = function () {
   if (!this.config.download) { return }
   let container = player.root
   let util = Player.util
-  let downloadEl = util.createDom('xgplayer-download', `<xg-icon class="xgplayer-download-img"></xg-icon>`, {}, 'xgplayer-download')
+  let downloadEl = util.createDom('hkplayer-download', `<hk-icon class="hkplayer-download-img"></hk-icon>`, {}, 'hkplayer-download')
 
   let root = player.controls
   root.appendChild(downloadEl)
 
   let tipsDownload = player.config.lang && player.config.lang === 'zh-cn' ? '下载' : 'Download'
-  let tips = util.createDom('xg-tips', tipsDownload, {}, 'xgplayer-tips')
+  let tips = util.createDom('hk-tips', tipsDownload, {}, 'hkplayer-tips')
   downloadEl.appendChild(tips)
 
   player.download = function() {

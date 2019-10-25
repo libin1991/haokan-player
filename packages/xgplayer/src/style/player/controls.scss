@@ -1,4 +1,4 @@
-.xgplayer-controls{
+.hkplayer-controls{
   display: flex;
   position: absolute;
   bottom: 0;
@@ -7,25 +7,25 @@
   height: 40px;
   background-image: $controlsBgImage;
   z-index: 10;
-  @at-root .xgplayer-nostart &{
+  @at-root .hkplayer-nostart &{
     display: none;
   }
   @at-root .no-controls &{
     display: none !important;
   }
-  @at-root .xgplayer-inactive & {
+  @at-root .hkplayer-inactive & {
     display: none;
   }
-  @at-root .xgplayer-is-live & {
+  @at-root .hkplayer-is-live & {
     > *{
       display: none;
     }
-    .xgplayer-play,
-    .xgplayer-play-img,
-    .xgplayer-placeholder,
-    .xgplayer-volume,
-    .xgplayer-live,
-    .xgplayer-fullscreen {
+    .hkplayer-play,
+    .hkplayer-play-img,
+    .hkplayer-placeholder,
+    .hkplayer-volume,
+    .hkplayer-live,
+    .hkplayer-fullscreen {
       display: block;
     }
   }

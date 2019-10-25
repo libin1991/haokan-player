@@ -1,4 +1,4 @@
-.xgplayer-start{
+.hkplayer-start{
   border-radius: 50%;
   display: inline-block;
   width: 70px;
@@ -14,17 +14,17 @@
   z-index: 1000;
   margin: -55px auto auto -35px;
   cursor: pointer;
-  @at-root .xgplayer-nostart &{
+  @at-root .hkplayer-nostart &{
     margin: -35px auto auto -35px;
   }
-  @at-root .xgplayer-inactive &{
+  @at-root .hkplayer-inactive &{
     margin: -35px auto auto -35px;
   }
   svg{
     fill: $startSvgFill;
     margin: 14px;
   }
-  &.xgplayer-start-interact{
+  &.hkplayer-start-interact{
     animation: playPause 0.4s ease-out forwards;
   }
   &:hover{
@@ -35,17 +35,17 @@
   }
 }
 
-.xgplayer-start-img{
+.hkplayer-start-img{
   display: none;
   position: absolute;
   left: 50%;
   top: 50%;
   z-index: 1000;
   cursor: pointer;
-  @at-root .xgplayer-nostart &{
+  @at-root .hkplayer-nostart &{
     display: block;
   }
-  &.xgplayer-start-interact{
+  &.hkplayer-start-interact{
     animation: playPause 0.4s ease-out forwards;
   }
   &:hover{

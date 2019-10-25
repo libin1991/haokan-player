@@ -4,7 +4,7 @@
   margin: 10px auto;
 }
 
-.xgplayer-bullet{
+.hkplayer-bullet{
   display: none;
   position: absolute;
   top:0;
@@ -20,7 +20,7 @@
     z-index: 9;
   }
 
-  @at-root .xgplayer-has-bullet {
+  @at-root .hkplayer-has-bullet {
     display: block;
   }
 }

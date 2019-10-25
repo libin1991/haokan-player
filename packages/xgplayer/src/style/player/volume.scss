@@ -1,4 +1,4 @@
-.xgplayer-volume {
+.hkplayer-volume {
     outline: none;
     order: 4;
     width: 40px;
@@ -7,7 +7,7 @@
     position: relative;
     margin-top: -100px;
     z-index: 38;
-    .xgplayer-icon {
+    .hkplayer-icon {
         cursor: pointer;
         position: absolute;
         bottom: 0;
@@ -19,7 +19,7 @@
         }
     }
 }
-.xgplayer-slider {
+.hkplayer-slider {
     display: none;
     position: absolute;
     width: 40px;
@@ -29,7 +29,7 @@
     outline: none;
     left: 0;
     border-radius: 4px;
-    @at-root .hkplayer.xgplayer-volume-active & {
+    @at-root .hkplayer.hkplayer-volume-active & {
         display: block;
     }
     &:after {
@@ -44,7 +44,7 @@
     }
 }
 
-.xgplayer-bar, .xgplayer-drag {
+.hkplayer-bar, .hkplayer-drag {
     display: block;
     position: absolute;
     bottom: 15px;
@@ -58,7 +58,7 @@
     cursor: pointer;
 }
 
-.xgplayer-drag {
+.hkplayer-drag {
     bottom: 0;
     background: $sliderDragBgColor;
     max-height: 78px;

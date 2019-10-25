@@ -22,9 +22,9 @@ let playbackRate = function () {
     return false
   }
   let tipsSpeed = player.config.lang && player.config.lang === 'zh-cn' ? '倍速' : 'Speed'
-  let ul = util.createDom('xg-playback', `<p class='name'><span>${selectedSpeed}x</span></p>`, {}, 'xgplayer-playback')
+  let ul = util.createDom('hk-playback', `<p class='name'><span>${selectedSpeed}x</span></p>`, {}, 'hkplayer-playback')
   let root = player.controls
-  let tips = util.createDom('xg-tips', tipsSpeed, {}, 'xgplayer-tips')
+  let tips = util.createDom('hk-tips', tipsSpeed, {}, 'hkplayer-tips')
   ul.appendChild(tips)
   root.appendChild(ul);
   ['touchstart', 'click'].forEach(item => {

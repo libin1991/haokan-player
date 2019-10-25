@@ -6,7 +6,7 @@ let pip = function () {
   if (!player.config.pip) {
     return
   }
-  let btn = util.createDom('xg-pip', '<p class="name"><span>画中画</span></p>', {tabindex: 9}, 'xgplayer-pip')
+  let btn = util.createDom('hk-pip', '<p class="name"><span>画中画</span></p>', {tabindex: 9}, 'hkplayer-pip')
   let root = player.controls
   let container = player.root
   root.appendChild(btn)
@@ -15,7 +15,7 @@ let pip = function () {
     btn.addEventListener(item, function (e) {
       e.preventDefault()
       e.stopPropagation()
-      if (util.hasClass(container, 'xgplayer-pip-active')) {
+      if (util.hasClass(container, 'hkplayer-pip-active')) {
         player.exitPIP(player)
       } else {
         player.getPIP(player)

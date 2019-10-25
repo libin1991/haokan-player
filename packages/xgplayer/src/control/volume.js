@@ -34,15 +34,15 @@ let volume = function () {
     }
     let curIocnPath = volumePath[v2s(volume)]
     let defaultPath = volumePath[v2s(volume)]
-    let container = util.createDom('xg-volume', `<xg-icon class="xgplayer-icon">
+    let container = util.createDom('hk-volume', `<hk-icon class="hkplayer-icon">
                                                       <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
                                                           <path transform="scale(${scale} ${scale})" d="M358.4 358.4h-204.8v307.2h204.8l256 256v-819.2l-256 256z"></path>
                                                           <path transform="scale(${scale} ${scale})" d="${defaultPath}"></path>
                                                       </svg>
-                                                  </xg-icon>`,
-    {}, 'xgplayer-volume')
+                                                  </hk-icon>`,
+    {}, 'hkplayer-volume')
     player.controls.appendChild(container)
-    let icon = container.querySelector('.xgplayer-icon')
+    let icon = container.querySelector('.hkplayer-icon')
     let pathVolume = container.querySelectorAll('path')[1]
     let svgVolume = new SVG({
       progress: (shape, percent) => {
@@ -91,24 +91,24 @@ let volume = function () {
   }
   let curIocnPath = iconPath[v2s(volume)]
   let defaultPath = iconPath[v2s(volume)]
-  let container = util.createDom('xg-volume', `<xg-icon class="xgplayer-icon">
+  let container = util.createDom('hk-volume', `<hk-icon class="hkplayer-icon">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                                         <path transform="scale(${scale} ${scale})" d="M358.4 358.4h-204.8v307.2h204.8l256 256v-819.2l-256 256z"></path>
                                                         <path transform="scale(${scale} ${scale})" d="${defaultPath}"></path>
                                                     </svg>
-                                                </xg-icon>
-                                                <xg-slider class="xgplayer-slider" tabindex="2">
-                                                    <xg-bar class="xgplayer-bar">
-                                                        <xg-drag class="xgplayer-drag"></xg-drag>
-                                                    </xg-bar>
-                                                </xg-slider>`,
-  {}, 'xgplayer-volume'); let root = player.controls
+                                                </hk-icon>
+                                                <hk-slider class="hkplayer-slider" tabindex="2">
+                                                    <hk-bar class="hkplayer-bar">
+                                                        <hk-drag class="hkplayer-drag"></hk-drag>
+                                                    </hk-bar>
+                                                </hk-slider>`,
+  {}, 'hkplayer-volume'); let root = player.controls
   root.appendChild(container)
   let containerHeight
-  let slider = container.querySelector('.xgplayer-slider')
-  let bar = container.querySelector('.xgplayer-bar')
-  let selected = container.querySelector('.xgplayer-drag')
-  let icon = container.querySelector('.xgplayer-icon')
+  let slider = container.querySelector('.hkplayer-slider')
+  let bar = container.querySelector('.hkplayer-bar')
+  let selected = container.querySelector('.hkplayer-drag')
+  let icon = container.querySelector('.hkplayer-icon')
   selected.style.height = `${player.config.volume * 100}%`
   let path = container.querySelectorAll('path')[1]
   let svg = new SVG({
@@ -198,20 +198,20 @@ let volume = function () {
   icon.addEventListener('mouseenter', (e) => {
     e.preventDefault()
     e.stopPropagation()
-    util.addClass(player.root, 'xgplayer-volume-active')
+    util.addClass(player.root, 'hkplayer-volume-active')
     container.focus()
   })
 
   container.addEventListener('blur', (e) => {
     e.preventDefault()
     e.stopPropagation()
-    util.removeClass(player.root, 'xgplayer-volume-active')
+    util.removeClass(player.root, 'hkplayer-volume-active')
   })
 
   container.addEventListener('mouseleave', (e) => {
     e.preventDefault()
     e.stopPropagation()
-    util.removeClass(player.root, 'xgplayer-volume-active')
+    util.removeClass(player.root, 'hkplayer-volume-active')
   })
 
   let _changeTimer = null

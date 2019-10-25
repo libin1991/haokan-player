@@ -85,7 +85,7 @@ let logger = function () {
     }
 
     let userLeave = function (event) {
-      if (util.hasClass(player.root, 'xgplayer-is-enter')) {
+      if (util.hasClass(player.root, 'hkplayer-is-enter')) {
         let lt = new Date().getTime()
         let obj = {
           url: player.logParams.pluginSrc ? player.logParams.pluginSrc : player.logParams.playSrc,
@@ -94,7 +94,7 @@ let logger = function () {
           lt
         }
         window.__xigua_log_sdk__('b', obj)
-      } else if (util.hasClass(player.root, 'xgplayer-playing')) {
+      } else if (util.hasClass(player.root, 'hkplayer-playing')) {
         let watch_dur = computeWatchDur(player.logParams.played)
         let lt = new Date().getTime()
         judgePtVt()

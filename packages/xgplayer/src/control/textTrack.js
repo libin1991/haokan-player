@@ -5,10 +5,10 @@ let textTrack = function () {
     return
   }
   let player = this, util = Player.util, sniffer = Player.sniffer
-  let ul = util.createDom('xg-textTrack', '', {tabindex: 7}, 'xgplayer-textTrack'), root = player.controls
+  let ul = util.createDom('hk-textTrack', '', {tabindex: 7}, 'hkplayer-textTrack'), root = player.controls
   let list = player.config.textTrack
   if (list && Array.isArray(list) && list.length > 1) {
-    util.addClass(player.root, 'xgplayer-is-textTrack')
+    util.addClass(player.root, 'hkplayer-is-textTrack')
     player.on('canplay', function () {
       let tmp = ['<ul>']
       tmp.push(`<li class=''}'>关闭</li>`)
@@ -18,14 +18,14 @@ let textTrack = function () {
       let controlText = player.config.lang && player.config.lang === 'zh-cn' ? '字幕' : 'Caption'
       tmp.push(`</ul><p class="name"><em>${controlText}</em></p>`)
 
-      let urlInRoot = root.querySelector('.xgplayer-textTrack')
+      let urlInRoot = root.querySelector('.hkplayer-textTrack')
       if (urlInRoot) {
         urlInRoot.innerHTML = tmp.join('')
         let cur = urlInRoot.querySelector('.name')
         cur.addEventListener('mouseenter', (e) => {
           e.preventDefault()
           e.stopPropagation()
-          util.addClass(player.root, 'xgplayer-textTrack-active')
+          util.addClass(player.root, 'hkplayer-textTrack-active')
           urlInRoot.focus()
         })
       } else {
@@ -34,7 +34,7 @@ let textTrack = function () {
         cur.addEventListener('mouseenter', (e) => {
           e.preventDefault()
           e.stopPropagation()
-          util.addClass(player.root, 'xgplayer-textTrack-active')
+          util.addClass(player.root, 'hkplayer-textTrack-active')
           ul.focus()
         })
         root.appendChild(ul)
@@ -55,10 +55,10 @@ let textTrack = function () {
         let trackDoms = player.root.getElementsByTagName('Track')
         if (li.innerHTML === '关闭') {
           trackDoms[0].track.mode = 'hidden'
-          util.removeClass(player.root, 'xgplayer-textTrack-active')
+          util.removeClass(player.root, 'hkplayer-textTrack-active')
         } else {
-          if (!util.hasClass(player.root, 'xgplayer-textTrack-active')) {
-            util.addClass(player.root, 'xgplayer-textTrack-active')
+          if (!util.hasClass(player.root, 'hkplayer-textTrack-active')) {
+            util.addClass(player.root, 'hkplayer-textTrack-active')
           }
           trackDoms[0].track.mode = 'showing'
 
@@ -84,7 +84,7 @@ let textTrack = function () {
   ul.addEventListener('mouseleave', (e) => {
     e.preventDefault()
     e.stopPropagation()
-    util.removeClass(player.root, 'xgplayer-textTrack-active')
+    util.removeClass(player.root, 'hkplayer-textTrack-active')
   })
 }
 

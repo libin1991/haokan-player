@@ -1,24 +1,24 @@
 @import "../util/svg-url";
-.xgplayer-download {
+.hkplayer-download {
   position: relative;
   width: 36px;
   height: 40px;
   order: 8;
   cursor: pointer;
-  @at-root .xgplayer-inactive & {
+  @at-root .hkplayer-inactive & {
     display: none;
   }
-  @at-root .xgplayer-nostart & {
+  @at-root .hkplayer-nostart & {
     display: none;
   }
   &:hover {
-    .xgplayer-tips {
+    .hkplayer-tips {
       display: block;
     }
   }
 }
 
-.xgplayer-download-img {
+.hkplayer-download-img {
   display: inline-block;
   width: 24px;
   height: 24px;

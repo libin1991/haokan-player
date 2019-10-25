@@ -166,7 +166,7 @@ util.clearInterval = function (context, eventName) {
 }
 
 util.createImgBtn = function (name, imgUrl, width, height) {
-  let btn = util.createDom(`xg-${name}`, '', {}, `xgplayer-${name}-img`)
+  let btn = util.createDom(`hk-${name}`, '', {}, `hkplayer-${name}-img`)
   btn.style.backgroundImage = `url("${imgUrl}")`
   if (width && height) {
     let w, h, unit

@@ -1,5 +1,5 @@
 @import "./animation";
-.xgplayer-enter{
+.hkplayer-enter{
   display: none;
   position: absolute;
   left: 0;
@@ -8,7 +8,7 @@
   height: 100%;
   background: url($enterBgImage) no-repeat center center / cover;
   z-index: 1100;
-  .xgplayer-enter-logo{
+  .hkplayer-enter-logo{
     display: block;
     position: absolute;
     left: 50%;
@@ -19,7 +19,7 @@
     background-size: 130px 44px;
     background-image: url($enterLogo);
   }
-  .xgplayer-enter-tips{
+  .hkplayer-enter-tips{
     display: none;
     position: absolute;
     left: 50%;
@@ -41,11 +41,11 @@
       animation: enterTips 1.6s linear infinite;
       background: #fff;
     }
-    @at-root .xgplayer-is-enter & {
+    @at-root .hkplayer-is-enter & {
       display: block;
     }
   }
-  @at-root .xgplayer-is-enter & {
+  @at-root .hkplayer-is-enter & {
     display: block;
   }
 }

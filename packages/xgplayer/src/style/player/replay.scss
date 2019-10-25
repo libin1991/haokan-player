@@ -1,4 +1,4 @@
-.xgplayer-replay{
+.hkplayer-replay{
   position: absolute;
   left: 0;
   top: 0;
@@ -26,7 +26,7 @@
       }
     }
   }
-  .xgplayer-replay-img{
+  .hkplayer-replay-img{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -35,7 +35,7 @@
       opacity: 0.85;
     }
   }
-  .xgplayer-replay-txt{
+  .hkplayer-replay-txt{
     display: inline-block;
     font-family: PingFangSC-Regular;
     font-size: 14px;
@@ -44,17 +44,17 @@
     cursor: pointer;
   }
 
-  @at-root .hkplayer.xgplayer-ended{
-    .xgplayer-controls {
+  @at-root .hkplayer.hkplayer-ended{
+    .hkplayer-controls {
       display: none;
     }
-    .xgplayer-replay{
+    .hkplayer-replay{
       display: flex;
     }
   }
 }
 
-.xgplayer-replay-img{
+.hkplayer-replay-img{
   display: none;
   position: absolute;
   left: 50%;
@@ -65,8 +65,8 @@
     opacity: 0.85;
   }
 
-  @at-root .hkplayer.xgplayer-ended{
-    .xgplayer-replay-img{
+  @at-root .hkplayer.hkplayer-ended{
+    .hkplayer-replay-img{
       display: block;
     }
   }

@@ -2,7 +2,7 @@ import Player from '../player'
 
 let poster = function () {
   let player = this; let util = Player.util
-  let poster = util.createDom('xg-poster', '', {}, 'xgplayer-poster');
+  let poster = util.createDom('hk-poster', '', {}, 'hkplayer-poster');
   let root = player.root
   if (player.config.poster) {
     poster.style.backgroundImage = `url(${player.config.poster})`

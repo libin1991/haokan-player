@@ -15,7 +15,7 @@ let screenShot = function () {
   if (!player.config.screenShot) {
     return
   }
-  let btn = util.createDom('xg-screenShot', '<p class="name"><span>截图</span></p>', {tabindex: 11}, 'xgplayer-screenShot')
+  let btn = util.createDom('hk-screenShot', '<p class="name"><span>截图</span></p>', {tabindex: 11}, 'hkplayer-screenShot')
   let canvas = document.createElement('canvas')
   let canvasCtx = canvas.getContext('2d')
   let img = new Image()

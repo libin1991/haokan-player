@@ -3,7 +3,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
-  .xgplayer-icon{
+  .hkplayer-icon{
     svg {
         position: relative;
         top: 50%;
@@ -12,7 +12,7 @@
     }
   }
   &:hover {
-    .xgplayer-tips {
+    .hkplayer-tips {
       display: block;
     }
   }

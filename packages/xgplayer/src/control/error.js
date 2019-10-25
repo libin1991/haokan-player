@@ -1,9 +1,9 @@
 import Player from '../player'
 
 let error = function () {
-  let player = this; let util = Player.util; let error = util.createDom('xg-error', '<em class="xgplayer-error-text">请<span class="xgplayer-error-refresh">刷新</span>试试</em>', {}, 'xgplayer-error')
+  let player = this; let util = Player.util; let error = util.createDom('hk-error', '<em class="hkplayer-error-text">请<span class="hkplayer-error-refresh">刷新</span>试试</em>', {}, 'hkplayer-error')
   player.root.appendChild(error)
-  let text = error.querySelector('.xgplayer-error-text')
+  let text = error.querySelector('.hkplayer-error-text')
   let refresh = null
   let refreshListener = false
 
@@ -13,14 +13,14 @@ let error = function () {
       text.innerHTML = player.error
     } else {
       if (player.config.lang && player.config.lang === 'zh-cn') {
-        text.innerHTML = `${player.lang.ERROR}，请<span class="xgplayer-error-refresh">刷新</span>试试`
+        text.innerHTML = `${player.lang.ERROR}，请<span class="hkplayer-error-refresh">刷新</span>试试`
       } else {
-        text.innerHTML = `${player.lang.ERROR}，please try to <span class="xgplayer-error-refresh">refresh</span>`
+        text.innerHTML = `${player.lang.ERROR}，please try to <span class="hkplayer-error-refresh">refresh</span>`
       }
     }
 
-    util.addClass(player.root, 'xgplayer-is-error')
-    refresh = error.querySelector('.xgplayer-error-refresh')
+    util.addClass(player.root, 'hkplayer-is-error')
+    refresh = error.querySelector('.hkplayer-error-refresh')
     if (refresh && !refreshListener) {
       ['touchend', 'click'].forEach(item => {
         refresh.addEventListener(item, function (e) {

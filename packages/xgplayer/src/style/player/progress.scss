@@ -1,4 +1,4 @@
-.xgplayer-progress{
+.hkplayer-progress{
   display: block;
   position: absolute;
   height: 20px;
@@ -8,17 +8,17 @@
   outline: none;
   top: -10px;
   z-index: 35;
-  @at-root .xgplayer.xgplayer-volume-active &{
+  @at-root .hkplayer.hkplayer-volume-active &{
     z-index: 15;
   }
-  @at-root .xgplayer.xgplayer-definition-active &{
+  @at-root .hkplayer.hkplayer-definition-active &{
     z-index: 15;
   }
-  @at-root .xgplayer.xgplayer-textTrack-active &{
+  @at-root .hkplayer.hkplayer-textTrack-active &{
     z-index: 15;
   }
 }
-.xgplayer-progress-outer{
+.hkplayer-progress-outer{
   background: $progressOuterBgColor;
   display: block;
   height: 3px;
@@ -28,7 +28,7 @@
   position: relative;
   cursor: pointer;
 }
-.xgplayer-progress-cache,.xgplayer-progress-played{
+.hkplayer-progress-cache,.hkplayer-progress-played{
   display: block;
   height: 100%;
   line-height: 1;
@@ -36,17 +36,17 @@
   left: 0;
   top: 0;
 }
-.xgplayer-progress-cache{
+.hkplayer-progress-cache{
   width: 0;
   background: $progressCacheBgColor;
 }
-.xgplayer-progress-played{
+.hkplayer-progress-played{
   display: block;
   width: 0;
   background-image: $progressPlayedBgImage;
   border-radius: 0 1.5px 1.5px 0;
 }
-.xgplayer-progress-btn{
+.hkplayer-progress-btn{
   display: none;
   position: absolute;
   left: 0px;
@@ -57,9 +57,9 @@
   background: #FFFFFF;
   box-shadow: $progressPlayedShadow;
 }
-.xgplayer-progress-point{
+.hkplayer-progress-point{
   position: absolute;
-  &.xgplayer-tips{
+  &.hkplayer-tips{
     margin-left: 0;
     top: -25px;
     display: none;
@@ -67,7 +67,7 @@
     transform: translateX(0);
   }
 }
-.xgplayer-progress-dot{
+.hkplayer-progress-dot{
   display: inline-block;
   position: absolute;
   height: 3px;
@@ -76,7 +76,7 @@
   background: white;
   border-radius: 6px;
   z-index: 16;
-  .xgplayer-progress-tip {
+  .hkplayer-progress-tip {
     position: absolute;
     left: 0;
     top: -40px;
@@ -92,29 +92,29 @@
     display: none;
   }
 }
-.xgplayer-progress-dot-show{
-  .xgplayer-progress-tip{
+.hkplayer-progress-dot-show{
+  .hkplayer-progress-tip{
     display: block;
   }
 }
-.xgplayer-progress-thumbnail{
+.hkplayer-progress-thumbnail{
   position: absolute;
   box-sizing: border-box;
-  &.xgplayer-tips{
+  &.hkplayer-tips{
     margin-left: 0;
     display: none;
     z-index: 99;
   }
 }
-.xgplayer-progress:hover,.xgplayer-progress:focus{
-  .xgplayer-progress-outer{
+.hkplayer-progress:hover,.hkplayer-progress:focus{
+  .hkplayer-progress-outer{
     height: 6px;
     margin-top: 7px;
   }
-  .xgplayer-progress-dot{
+  .hkplayer-progress-dot{
     height: 6px;
   }
-  .xgplayer-progress-btn{
+  .hkplayer-progress-btn{
     display: block
   }
 }

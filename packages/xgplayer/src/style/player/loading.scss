@@ -1,4 +1,4 @@
-.xgplayer-loading{
+.hkplayer-loading{
   display: none;
   width: 100px;
   height: 100px;
@@ -21,10 +21,10 @@
       stroke-width: 12px;
     }
   }
-  @at-root .xgplayer-nostart .xgplayer-loading{
+  @at-root .hkplayer-nostart .hkplayer-loading{
     display: none;
   }
-  @at-root .xgplayer-isloading .xgplayer-loading{
+  @at-root .hkplayer-isloading .hkplayer-loading{
     display: block;
   }
 }

@@ -53,10 +53,10 @@ let mobile = function () {
       pause: centerBtn.pausePath ? centerBtn.pausePath : 'M576,363L810,512L576,661zM342,214L576,363L576,661L342,810z',
       play: centerBtn.playPath ? centerBtn.playPath : 'M598,214h170v596h-170v-596zM256 810v-596h170v596h-170z'
     }
-    btn = util.createDom('xg-start', `
+    btn = util.createDom('hk-start', `
           <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
               <path transform="scale(0.04,0.04)" d="${iconPath.pause}"></path>
-          </svg>`, {}, 'xgplayer-start')
+          </svg>`, {}, 'hkplayer-start')
     path = btn.querySelector('path')
     svg = new SVG({
       from: iconPath.play,
@@ -67,11 +67,11 @@ let mobile = function () {
     })
   }
 
-  let enter = util.createDom('xg-enter', '<xg-enter-logo class="xgplayer-enter-logo"></xg-enter-logo><xg-enter-tips class="xgplayer-enter-tips"></xg-player-tips>', {}, 'xgplayer-enter')
-  let logo = enter.querySelector('.xgplayer-enter-logo')
+  let enter = util.createDom('hk-enter', '<hk-enter-logo class="hkplayer-enter-logo"></hk-enter-logo><hk-enter-tips class="hkplayer-enter-tips"></hk-player-tips>', {}, 'hkplayer-enter')
+  let logo = enter.querySelector('.hkplayer-enter-logo')
   root.appendChild(btn)
   root.appendChild(enter)
-  let enterTips = enter.querySelector('.xgplayer-enter-tips')
+  let enterTips = enter.querySelector('.hkplayer-enter-tips')
   let enterLogo = new Image()
   enterLogo.onload = () => {
     enterTips.style.display = 'block'
@@ -106,7 +106,7 @@ let mobile = function () {
   if (pass) {
     player.video.addEventListener('touchend', (e) => {
       e.preventDefault()
-      if (util.hasClass(root, 'xgplayer-inactive')) {
+      if (util.hasClass(root, 'hkplayer-inactive')) {
         player.emit('focus')
       } else {
         player.emit('blur')
@@ -123,14 +123,14 @@ let mobile = function () {
     }, false)
     btn.addEventListener('touchend', (e) => {
       e.preventDefault()
-      if (util.hasClass(root, 'xgplayer-nostart')) {
-        util.removeClass(root, 'xgplayer-nostart')
-        util.addClass(root, 'xgplayer-is-enter')
+      if (util.hasClass(root, 'hkplayer-nostart')) {
+        util.removeClass(root, 'hkplayer-nostart')
+        util.addClass(root, 'hkplayer-is-enter')
         player.on('canplay', () => {
-          util.removeClass(root, 'xgplayer-is-enter')
+          util.removeClass(root, 'hkplayer-is-enter')
         })
         player.once('playing', () => {
-          util.removeClass(root, 'xgplayer-is-enter')
+          util.removeClass(root, 'hkplayer-is-enter')
         })
         player.play()
       } else {
@@ -156,7 +156,7 @@ let mobile = function () {
       }
     })
   } else {
-    util.addClass(root, 'xgplayer-mobile-npassed')
+    util.addClass(root, 'hkplayer-mobile-npassed')
     player.once('ready', function () {
       player.video.controls = player.config.controls
       player.video.controlsList = player.config.controlsList.join(' ')

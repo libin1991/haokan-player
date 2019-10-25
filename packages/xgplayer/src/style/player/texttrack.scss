@@ -1,4 +1,4 @@
-.xgplayer-textTrack{
+.hkplayer-textTrack{
   order: 7;
   width: 60px;
   height: 150px;
@@ -24,7 +24,7 @@
     margin-left: -10px;
     z-index: 26;
     cursor: pointer;
-    @at-root .xgplayer.xgplayer-textTrack-active &{
+    @at-root .hkplayer.hkplayer-textTrack-active &{
       display: block;
     }
     li{
@@ -61,7 +61,7 @@
     display:inline-block;
     vertical-align:middle;
   }
-  @at-root .xgplayer-is-textTrack &{
+  @at-root .hkplayer-is-textTrack &{
     display: block;
   }
 }

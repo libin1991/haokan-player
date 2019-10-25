@@ -28,10 +28,10 @@ class Player extends Proxy {
     this.history = []
     this.isProgressMoving = false
     this.root = util.findDom(document, `#${this.config.id}`)
-    this.controls = util.createDom('xg-controls', '', {
+    this.controls = util.createDom('hk-controls', '', {
       unselectable: 'on',
       onselectstart: 'return false'
-    }, 'xgplayer-controls')
+    }, 'hkplayer-controls')
     if (!this.root) {
       let el = this.config.el
       if (el && el.nodeType === 1) {
@@ -46,7 +46,7 @@ class Player extends Proxy {
       }
     }
     // this.rootBackup = util.copyDom(this.root)
-    util.addClass(this.root, `hkplayer hkplayer-${sniffer.device} xgplayer-nostart ${this.config.controls ? '' : 'no-controls'}`)
+    util.addClass(this.root, `hkplayer hkplayer-${sniffer.device} hkplayer-nostart ${this.config.controls ? '' : 'no-controls'}`)
     this.root.appendChild(this.controls)
     if (this.config.fluid) {
       this.root.style['max-width'] = '100%'
@@ -127,7 +127,7 @@ class Player extends Proxy {
       })
     }
     if (this.config.videoInit) {
-      if(util.hasClass(this.root, 'xgplayer-nostart')) {
+      if(util.hasClass(this.root, 'hkplayer-nostart')) {
         this.start()
       }
     }
@@ -147,7 +147,7 @@ class Player extends Proxy {
           player.emit('autoplay started')
         }).catch(function () {
           player.emit('autoplay was prevented')
-          Player.util.addClass(player.root, 'xgplayer-is-autoplay')
+          Player.util.addClass(player.root, 'hkplayer-is-autoplay')
         })
       }
       player.off('canplay', player.canPlayFunc)
@@ -259,7 +259,7 @@ class Player extends Proxy {
     let self = this
     let _replay = this._replay
     // ie9 bugfix
-    util.removeClass(this.root, 'xgplayer-ended')
+    util.removeClass(this.root, 'hkplayer-ended')
     this.logParams = {
       bc: 0,
       bu_acu_t: 0,
@@ -312,14 +312,14 @@ class Player extends Proxy {
     let ro = this.root.getBoundingClientRect()
     let Top = ro.top
     let Left = ro.left
-    let dragLay = util.createDom('xg-pip-lay', '<div></div>', {}, 'xgplayer-pip-lay')
+    let dragLay = util.createDom('hk-pip-lay', '<div></div>', {}, 'hkplayer-pip-lay')
     this.root.appendChild(dragLay)
-    let dragHandle = util.createDom('xg-pip-drag', '<div class="drag-handle"><span>点击按住可拖动视频</span></div>', {tabindex: 9}, 'xgplayer-pip-drag')
+    let dragHandle = util.createDom('hk-pip-drag', '<div class="drag-handle"><span>点击按住可拖动视频</span></div>', {tabindex: 9}, 'hkplayer-pip-drag')
     this.root.appendChild(dragHandle)
-    let draggie = new Draggabilly('.xgplayer', {
+    let draggie = new Draggabilly('.hkplayer', {
       handle: '.drag-handle'
     })
-    util.addClass(this.root, 'xgplayer-pip-active')
+    util.addClass(this.root, 'hkplayer-pip-active')
     this.root.style.right = 0
     this.root.style.bottom = '200px'
     this.root.style.top = ''
@@ -340,7 +340,7 @@ class Player extends Proxy {
   }
 
   exitPIP () {
-    util.removeClass(this.root, 'xgplayer-pip-active')
+    util.removeClass(this.root, 'hkplayer-pip-active')
     this.root.style.right = ''
     this.root.style.bottom = ''
     this.root.style.top = ''
@@ -352,7 +352,7 @@ class Player extends Proxy {
 
   onFocus () {
     let player = this
-    util.removeClass(this.root, 'xgplayer-inactive')
+    util.removeClass(this.root, 'hkplayer-inactive')
     if (player.userTimer) {
       clearTimeout(player.userTimer)
     }
@@ -364,17 +364,17 @@ class Player extends Proxy {
   onBlur () {
     // this.video.blur()
     if (!this.paused && !this.ended) {
-      util.addClass(this.root, 'xgplayer-inactive')
+      util.addClass(this.root, 'hkplayer-inactive')
     }
   }
 
   onPlay () {
-    util.addClass(this.root, 'xgplayer-playing')
-    util.removeClass(this.root, 'xgplayer-pause')
+    util.addClass(this.root, 'hkplayer-playing')
+    util.removeClass(this.root, 'hkplayer-pause')
   }
 
   onPause () {
-    util.addClass(this.root, 'xgplayer-pause')
+    util.addClass(this.root, 'hkplayer-pause')
     if (this.userTimer) {
       clearTimeout(this.userTimer)
     }
@@ -382,8 +382,8 @@ class Player extends Proxy {
   }
 
   onEnded () {
-    util.addClass(this.root, 'xgplayer-ended')
-    util.removeClass(this.root, 'xgplayer-playing')
+    util.addClass(this.root, 'hkplayer-ended')
+    util.removeClass(this.root, 'hkplayer-playing')
   }
 
   onSeeking () {
@@ -395,7 +395,7 @@ class Player extends Proxy {
     if (this.waitTimer) {
       clearTimeout(this.waitTimer)
     }
-    util.removeClass(this.root, 'xgplayer-isloading')
+    util.removeClass(this.root, 'hkplayer-isloading')
   }
 
   onWaiting () {
@@ -404,7 +404,7 @@ class Player extends Proxy {
       clearTimeout(self.waitTimer)
     }
     self.waitTimer = setTimeout(function () {
-      util.addClass(self.root, 'xgplayer-isloading')
+      util.addClass(self.root, 'hkplayer-isloading')
     }, 500)
   }
 
@@ -412,8 +412,8 @@ class Player extends Proxy {
     if (this.waitTimer) {
       clearTimeout(this.waitTimer)
     }
-    util.removeClass(this.root, 'xgplayer-isloading xgplayer-nostart xgplayer-pause xgplayer-ended xgplayer-is-error xgplayer-replay')
-    util.addClass(this.root, 'xgplayer-playing')
+    util.removeClass(this.root, 'hkplayer-isloading hkplayer-nostart hkplayer-pause hkplayer-ended hkplayer-is-error hkplayer-replay')
+    util.addClass(this.root, 'hkplayer-playing')
   }
 
   onKeydown (event, player) {
@@ -424,16 +424,16 @@ class Player extends Proxy {
     }
     if (e && (e.keyCode === 40 || e.keyCode === 38)) {
       if (player.controls) {
-        let volumeSlider = player.controls.querySelector('.xgplayer-slider')
+        let volumeSlider = player.controls.querySelector('.hkplayer-slider')
         if (volumeSlider) {
-          if (util.hasClass(volumeSlider, 'xgplayer-none')) {
-            util.removeClass(volumeSlider, 'xgplayer-none')
+          if (util.hasClass(volumeSlider, 'hkplayer-none')) {
+            util.removeClass(volumeSlider, 'hkplayer-none')
           }
           if (player.sliderTimer) {
             clearTimeout(player.sliderTimer)
           }
           player.sliderTimer = setTimeout(function () {
-            util.addClass(volumeSlider, 'xgplayer-none')
+            util.addClass(volumeSlider, 'hkplayer-none')
           }, player.config.inactive)
         }
       }

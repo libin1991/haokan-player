@@ -7,9 +7,9 @@ const rotate = function () {
     this.config.rotate = {}
   }
   let util = Player.util
-  let btn = util.createDom('xg-rotate', '<xg-icon class="xgplayer-icon xgplayer-rotate-img"></xg-icon>', {}, 'xgplayer-rotate')
+  let btn = util.createDom('hk-rotate', '<hk-icon class="hkplayer-icon hkplayer-rotate-img"></hk-icon>', {}, 'hkplayer-rotate')
   let tipsRotate = player.config.lang && player.config.lang === 'zh-cn' ? '旋转' : 'Rotate'
-  let tips = util.createDom('xg-tips', tipsRotate, {}, 'xgplayer-tips')
+  let tips = util.createDom('hk-tips', tipsRotate, {}, 'hkplayer-tips')
   btn.appendChild(tips)
   let root = player.controls
   root.appendChild(btn)

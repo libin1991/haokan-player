@@ -1,5 +1,5 @@
 class INDEXDB {
-  constructor (mydb = {name: 'xgplayer', version: 1, db: null, ojstore: {name: 'xg-m4a', keypath: 'vid'}}) {
+  constructor (mydb = {name: 'hkplayer', version: 1, db: null, ojstore: {name: 'hk-m4a', keypath: 'vid'}}) {
     this.indexedDB = window.indexedDB || window.webkitindexedDB
     this.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange // 键范围
     this.myDB = mydb

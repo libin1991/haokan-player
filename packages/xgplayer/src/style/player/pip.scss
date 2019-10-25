@@ -1,4 +1,4 @@
-.xgplayer-pip{
+.hkplayer-pip{
   order: 9;
   position: relative;
   outline: none;
@@ -25,26 +25,26 @@
       vertical-align:middle;
     }
   }
-  @at-root .xgplayer.xgplayer-pip-active{
+  @at-root .hkplayer.hkplayer-pip-active{
     position: fixed !important;
     right: 0;
     bottom: 200px;
     width: 320px!important;
     height: 180px!important;
     z-index: 999 !important;
-    .xgplayer-controls {
+    .hkplayer-controls {
       display: none;
     }
-    xg-bullet {
+    hk-bullet {
       display: none;
     }
-    .xgplayer-pip-lay{
+    .hkplayer-pip-lay{
       display: block;
     }
   }
 }
 
-.xgplayer-pip-lay{
+.hkplayer-pip-lay{
   position: absolute;
   top: 26px;
   left: 0;
@@ -60,7 +60,7 @@
   }
 }
 
-.xgplayer-pip-drag{
+.hkplayer-pip-drag{
   cursor: move;
   position: absolute;
   top: 0;
@@ -71,10 +71,10 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
   z-index: 1500;
   display: none;
-  @at-root .xgplayer.xgplayer-pip-active & {
+  @at-root .hkplayer.hkplayer-pip-active & {
     display: flex;
   }
-  @at-root .xgplayer.xgplayer-inactive & {
+  @at-root .hkplayer.hkplayer-inactive & {
     display: none;
   }
 }

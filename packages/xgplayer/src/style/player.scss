@@ -1,16 +1,16 @@
 // order:
-// xgplayer-play  0
-// xgplayer-playNext  1
-// xgplayer-time  2
-// xgplayer-placeholder 3
-// xgplayer-volume 4
-// xgplayer-definition 5
-// xgplayer-bullet-btn 6
-// xgplayer-textTrack 7
-// xgplayer-playback 8
-// xgplayer-rotate 9
-// xgplayer-screenShot 10
-// xgplayer-fullscreen 11
+// hkplayer-play  0
+// hkplayer-playNext  1
+// hkplayer-time  2
+// hkplayer-placeholder 3
+// hkplayer-volume 4
+// hkplayer-definition 5
+// hkplayer-bullet-btn 6
+// hkplayer-textTrack 7
+// hkplayer-playback 8
+// hkplayer-rotate 9
+// hkplayer-screenShot 10
+// hkplayer-fullscreen 11
 
 @import "player/animation";
 @import "player/download";
@@ -34,14 +34,14 @@
     .hkplayer-none{
         display: none
     }
-    &.xgplayer-is-fullscreen{
+    &.hkplayer-is-fullscreen{
         width: 100%!important;
         height: 100%!important;
         // Undo any aspect ratio padding for fluid layouts
         padding-top: 0 !important;
         z-index: 9999;
     }
-    &.xgplayer-is-fullscreen.xgplayer-inactive{
+    &.hkplayer-is-fullscreen.hkplayer-inactive{
         cursor: none;
     }
     video{
@@ -50,7 +50,7 @@
         outline: none;
     }
 }
-.xgplayer-icon {
+.hkplayer-icon {
     display: block;
     width: 40px;
     height: 40px;
@@ -79,7 +79,7 @@
 @import "player/enter";
 @import "player/screenShot";
 
-.xgplayer-poster{
+.hkplayer-poster{
     position: absolute;
     left: 0;
     top: 0;
@@ -89,7 +89,7 @@
     background-size: cover;
     background-position: center center;
 }
-.xgplayer-live{
+.hkplayer-live{
     display: block;
     font-size: 12px;
     color: $liveColor;

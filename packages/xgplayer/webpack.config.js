@@ -6,7 +6,7 @@ const umd = {
   output: {
     path: `${__dirname}/dist`,
     filename: 'index.js',
-    library: 'xgplayer',
+    library: 'hkplayer',
     libraryTarget: 'umd'
   },
   mode: 'production',

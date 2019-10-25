@@ -13,18 +13,18 @@ let pc = function () {
       pause: centerBtn.pausePath ? centerBtn.pausePath : 'M576,363L810,512L576,661zM342,214L576,363L576,661L342,810z',
       play: centerBtn.playPath ? centerBtn.playPath : 'M598,214h170v596h-170v-596zM256 810v-596h170v596h-170z'
     }
-    btn = util.createDom('xg-start', `
+    btn = util.createDom('hk-start', `
           <svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
               <path transform="scale(0.04,0.04)" d="${iconPath.pause}"></path>
-          </svg>`, {}, 'xgplayer-start')
+          </svg>`, {}, 'hkplayer-start')
     path = btn.querySelector('path')
   }
 
-  let enter = util.createDom('xg-enter', '<xg-enter-logo class="xgplayer-enter-logo"></xg-enter-logo><xg-enter-tips class="xgplayer-enter-tips"></xg-player-tips>', {}, 'xgplayer-enter')
-  let logo = enter.querySelector('.xgplayer-enter-logo')
+  let enter = util.createDom('hk-enter', '<hk-enter-logo class="hkplayer-enter-logo"></hk-enter-logo><hk-enter-tips class="hkplayer-enter-tips"></hk-player-tips>', {}, 'hkplayer-enter')
+  let logo = enter.querySelector('.hkplayer-enter-logo')
   root.appendChild(btn)
   root.appendChild(enter)
-  let enterTips = enter.querySelector('.xgplayer-enter-tips')
+  let enterTips = enter.querySelector('.hkplayer-enter-tips')
   let enterLogo = new Image()
   enterLogo.onload = () => {
     enterTips.style.display = 'block'
@@ -57,11 +57,11 @@ let pc = function () {
   }
 
   function startClcCanplay () {
-    util.removeClass(root, 'xgplayer-is-enter')
+    util.removeClass(root, 'hkplayer-is-enter')
   }
 
   function startClcPlaying () {
-    util.removeClass(root, 'xgplayer-is-enter')
+    util.removeClass(root, 'hkplayer-is-enter')
   }
 
   function startClc (e) {
@@ -70,9 +70,9 @@ let pc = function () {
     // if (!player.config.url) {
     //   return
     // }
-    if (util.hasClass(root, 'xgplayer-nostart')) {
-      util.removeClass(root, 'xgplayer-nostart') // for ie quick switch
-      util.addClass(root, 'xgplayer-is-enter')
+    if (util.hasClass(root, 'hkplayer-nostart')) {
+      util.removeClass(root, 'hkplayer-nostart') // for ie quick switch
+      util.addClass(root, 'hkplayer-is-enter')
       player.on('canplay', startClcCanplay)
       player.once('playing', startClcPlaying)
       if (!root.querySelector('video')) {
@@ -81,7 +81,7 @@ let pc = function () {
       player.play()
     } else {
       if (player.paused) {
-        util.removeClass(root, 'xgplayer-nostart xgplayer-isloading')
+        util.removeClass(root, 'hkplayer-nostart hkplayer-isloading')
         setTimeout(() => {
           player.play()
         }, 10)
@@ -94,7 +94,7 @@ let pc = function () {
 
   function startAniEnd (e) {
     e.preventDefault()
-    util.removeClass(btn, 'xgplayer-start-interact')
+    util.removeClass(btn, 'hkplayer-start-interact')
     btn.style.display = 'none'
   }
   btn.addEventListener('animationend', function (e) { startAniEnd(e) })
@@ -106,7 +106,7 @@ let pc = function () {
       path.setAttribute('d', iconPath.pause)
     }
     btn.style.display = 'inline-block'
-    util.addClass(btn, 'xgplayer-start-interact')
+    util.addClass(btn, 'hkplayer-start-interact')
   }
   player.on('play', playFunc)
 
@@ -117,7 +117,7 @@ let pc = function () {
       path.setAttribute('d', iconPath.play)
     }
     btn.style.display = 'inline-block'
-    util.addClass(btn, 'xgplayer-start-interact')
+    util.addClass(btn, 'hkplayer-start-interact')
   }
   player.on('pause', pauseFunc)
 
@@ -132,7 +132,7 @@ let pc = function () {
       }
       if (clk === 1) {
         _click_ = setTimeout(function () {
-          if (util.hasClass(player.root, 'xgplayer-nostart')) {
+          if (util.hasClass(player.root, 'hkplayer-nostart')) {
             return false
           } else if (!player.ended) {
             if (player.paused) {
@@ -155,7 +155,7 @@ let pc = function () {
     e.stopPropagation()
     let player = this
     if (!player.config.closeVideoDblclick) {
-      let fullscreen = controls.querySelector('.xgplayer-fullscreen')
+      let fullscreen = controls.querySelector('.hkplayer-fullscreen')
       if (fullscreen) {
         let clk
         if (document.createEvent) {
