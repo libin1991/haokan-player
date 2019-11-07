@@ -1,24 +1,8 @@
-<div align="center">
-    <img src="https://raw.githubusercontent.com/bytedance/xgplayer/master/xgplayer.png" width="384" height="96">
-</div>
-<div align="center">
-    <a href="https://www.npmjs.com/package/xgplayer" target="_blank">
-        <img src="https://img.shields.io/npm/v/xgplayer.svg" alt="npm">
-    </a>
-    <a href="https://www.npmjs.com/package/xgplayer" target="_blank">
-        <img src="https://img.shields.io/npm/l/xgplayer.svg" alt="license">
-    </a>
-    <a href="http://commitizen.github.io/cz-cli/">
-        <img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="commitizen">
-    </a>
-</div>
+ 
+ 
 
 
-### Introduction
-
-xgplayer is a web video player library. It has designed a separate, detachable UI component based on the principle that everything is componentized. More importantly, it is not only flexible in the UI layer, but also bold in its functionality: it gets rid of video loading, buffering, and format support for video dependence. Especially on mp4
-it can be staged loading for that does not support streaming mp4. This means seamless switching with clarity, load control, and video savings. It also integrates on-demand and live support for FLV, HLS, and dash. [Document](http://h5player.bytedance.com/en/)
-
+ 
 ### Start
 
 1. Install
